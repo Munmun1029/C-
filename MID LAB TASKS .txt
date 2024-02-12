@@ -1,0 +1,1321 @@
+***********************first lab first task*************************************
+
+using System;
+
+namespace OOP2_First_Project_P
+{
+    class Program
+    {
+        static void Main()
+        {
+            Console.WriteLine("Give Your Information for the Course\n");
+            Console.Write("Enter Your Name: ");
+            string name = Console.ReadLine();
+            Console.Write("Enter Your ID: ");
+            string id = Console.ReadLine();
+            Console.Write("Enter Your Course Name: ");
+            string course_name = Console.ReadLine();
+            
+            Console.Write("\nInformation");          
+            Console.WriteLine("Name: " + name);
+            Console.WriteLine("ID: " + id);
+            Console.WriteLine("Course Name: " + course_name);
+            
+          
+            }
+        }
+    }
+}
+
+
+
+******************************first lab second code ***************************************
+
+using System;
+
+namespace OOP2_First_Project_P
+{
+    class Program
+    {
+        static void Main(){
+            
+            Console.Write("Enter your name: ");
+            string name = Console.ReadLine();
+            Console.WriteLine("your name is: "+name);
+            string lowerName = name.ToLower();
+            string replaceChar = lowerName.Replace(" ", "");
+
+            for (int i = 0; i < replaceChar.Length; i++)
+            {
+              
+                if (replaceChar[i] == 'a' || replaceChar[i] == 'e' || replaceChar[i] == 'i' || replaceChar[i] == 'o' || replaceChar[i] == 'u')
+                {               
+                   Console.WriteLine("Vowel");
+                }
+                else
+                {
+                    Console.WriteLine("Consonant");
+                }
+            
+         }
+    }
+}
+************************************second lab first task**********************************
+
+********************person file*******************
+using System;
+
+
+namespace lab_task2
+{
+    class Person
+    {
+        public string name;
+        private int age;
+        
+        public void setAge(int age)
+        {
+            this.age = age;
+        }
+
+        public int getAge()
+        {
+            return age;
+        }
+
+        public void displayInfo()
+        {
+            Console.WriteLine("Name: " + name);
+            Console.WriteLine("Age: " + age);
+        }
+    }
+}
+**********************************program file********************************
+using System;
+
+namespace lab_task2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Person person1 = new Person();
+
+            Console.WriteLine("Enter the Name: ");
+            person1.name = Console.ReadLine();
+            Console.WriteLine("Enter the Age: ");
+            int age = Convert.ToInt32(Console.ReadLine());
+            person1.setAge(age);
+           
+            person1.displayInfo();    
+        }
+    }
+}
+
+
+
+********************************third lab ********************************************
+***************triangle***************
+using System;
+
+namespace Triangle
+{
+    class Program
+    {
+        private int x, y, z;
+        public Program(int x, int y, int z)
+        {
+            this.x = x;
+            this.y = y;
+            this.z = z;
+        }
+        void showInfo()
+        {
+            Console.WriteLine("X= " + x);
+            Console.WriteLine("Y= " + y);
+            Console.WriteLine("Z= " + z);
+            Console.WriteLine();
+        }
+        void TestTriangle()
+
+        {
+            if (x == y && x == z && z == y)
+            {
+                Console.WriteLine(" The triangle is equilateral");
+            }
+            else if (x == y || x == z || y == z)
+            {
+                Console.WriteLine("The triangle is isosceles");
+            }
+            else
+            {
+                Console.WriteLine("The triangle is scalene ");
+            }
+            Console.WriteLine();
+        }
+        static void Main(string[] args)
+        {
+            Program t = new Program(4, 5, 4);
+            t.showInfo();
+            t.TestTriangle();
+            Program t2 = new Program(5, 5, 5);
+            t2.showInfo();
+            t2.TestTriangle();
+            Program t3 = new Program(4, 5, 6);
+            t3.showInfo();
+            t3.TestTriangle();
+            Console.ReadKey();
+
+        }
+    }
+}
+
+**************student******************
+
+using System;
+
+namespace labtask_3
+{
+  
+        class Student
+        {
+            private String name;
+            private String id;
+            private String department;
+            private float cgpa;
+            public void setName(String name)
+            {
+                this.name = name;
+            }
+            public void setId(String id)
+            {
+                this.id = id;
+            }
+            public void setDepartment(String department)
+            {
+                this.department = department;
+            }
+            public void setCgpa(float cgpa)
+            {
+                this.cgpa = cgpa;
+            }
+            public void ShowInfo()
+            {
+                Console.WriteLine("Name = " + name);
+                Console.WriteLine("Id = " + id);
+                Console.WriteLine("Department = " + department);
+                Console.WriteLine("Cgpa = " + cgpa);
+                Console.WriteLine();
+            }
+            static void Main(string[] args)
+            {
+                Student s = new Student();
+
+                s.setName("MUNMUNI");
+                s.setId("20-42701-1");
+                s.setDepartment("CSE");
+                s.setCgpa(3.63f);
+                s.ShowInfo();
+
+
+                Student s1 = new Student();
+
+                s1.setName("Yeasmin");
+                s1.setId("20-42710-1");
+                s1.setDepartment("CSE");
+                s1.setCgpa(3.59f);
+                s1.ShowInfo();
+
+
+                Console.ReadKey();
+            }
+        }
+    }
+
+********course***************
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace labtask_3
+{
+    class course
+    {
+            private string courseName;
+            private string coursCode;
+            private int courseCredit;
+            void SetInfo(string cname, string ccode, int ccrscre)
+            {
+                courseName = cname;
+                coursCode = ccode;
+                courseCredit = ccrscre;
+            }
+            string getCourseName()
+            {
+                return courseName;
+            }
+            string getcoursCode()
+            {
+                return coursCode;
+            }
+            int getcourseCredit()
+            {
+                return courseCredit;
+            }
+            public void ShowCourseInfo()
+            {
+                Console.WriteLine(courseName + " " + coursCode + " " + courseCredit);
+            }
+            static void Main(string[] args)
+            {
+                course c1 = new course();
+                course c2 = new course();
+                course c3 = new course();
+                c1.SetInfo("Data Base", "501", 3);
+                c2.SetInfo("Data Structure", "502", 3);
+                c3.SetInfo("Economics", "705", 2);
+                c1.ShowCourseInfo();
+                c2.ShowCourseInfo();
+                c3.ShowCourseInfo();
+                Console.ReadKey();
+            }
+        }
+    }
+
+
+
+
+********************account*******************
+
+using System;
+
+namespace Account
+{
+    class Account
+    {
+        private String accName;
+        private String acid;
+        private int balance;
+        public Program(String accName, String acid, int balance)
+        {
+            this.accName = accName;
+            this.acid = acid;
+            this.balance = balance;
+        }
+        void Deposit(int amount)
+        {
+            Console.WriteLine("Balance = " + balance);
+            Console.WriteLine("Deposit amount =" + amount);
+            amount = balance + amount;
+            balance = amount;
+            Console.WriteLine("After deposit Balance =" + amount);
+            Console.WriteLine();
+        }
+        void Withdraw(int amount)
+        {
+            Console.WriteLine("Balance = " + balance);
+            Console.WriteLine("Withdraw amount =" + amount);
+            amount = balance - amount;
+            balance = amount;
+            Console.WriteLine("After withdraw balance =" + amount);
+            Console.WriteLine();
+        }
+        static void Main(string[] args)
+        {
+            Account a = new Account("munmun", "40511", 50000);
+            a.Deposit(1000);
+            a.Withdraw(2000);
+            Account a1 = new Account("yeasmin", "65240", 75000);
+            a1.Withdraw(2000);
+            a1.Deposit(1000);
+            Console.ReadKey();
+        }
+    }
+}
+
+
+*******************************Forth lab ****************************************
+
+*******************account**********
+
+using System;
+
+namespace Account
+{
+    public class Account
+    {
+        private String accName;
+        private String acid;
+        private int balance;
+        public Account()
+        {
+        }
+        public Account(String accName, String acid, int balance)
+        {
+            this.accName = accName;
+            this.acid = acid;
+            this.balance = balance;
+        }
+        void setAccName(String accName)
+        {
+            this.accName = accName;
+        }
+        void setAcId(String acid)
+        {
+            this.acid = acid;
+        }
+        void setBalance(int balance)
+        {
+            this.balance = balance;
+        }
+        String getAccName()
+        {
+            return accName;
+        }
+        String getAcId()
+        {
+            return acid;
+        }
+        int getBalance()
+        {
+            return balance;
+        }
+        public String AccName { get; set; }
+        public String AccId { get; set; }
+        public int Balance { get; set; }
+        public void Deposit(int amount)
+        {
+            Console.WriteLine("Account name    : " + getAccName());
+            Console.WriteLine("Account id      : " + getAcId());
+            Console.WriteLine("Balance         : " + getBalance());
+            Console.WriteLine("Deposit amount  : " + amount);
+            amount = balance + amount;
+            balance = amount;
+            Console.WriteLine("After deposit Balance : " + amount);
+            Console.WriteLine();
+        }
+        public void Withdraw(int amount)
+        {
+            Console.WriteLine("Account name    : " + getAccName());
+            Console.WriteLine("Account id      : " + getAcId());
+            Console.WriteLine("Balance         : " + balance);
+            Console.WriteLine("Withdraw amount : " + amount);
+            amount = balance - amount;
+            balance = amount;
+            Console.WriteLine("After withdraw balance :" + amount);
+            Console.WriteLine();
+        }
+        public void Transfer(int amount, Account receiver)
+        {
+            Console.WriteLine("..........." + receiver.getAccName() + " Receive " + amount + " taka from " + this.getAccName() + "...........\n");
+            receiver.Deposit(amount);
+            this.Withdraw(amount);
+
+
+        }
+    }
+}
+
+
+***********account program***********
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Account
+{
+    class Start
+    {
+        static void Main(string[] args)
+        {
+            Account a = new Account("MUNMUN", "5440511", 50000);
+            a.Deposit(10000);
+            a.Withdraw(2000);
+
+            Account a1 = new Account("MAAHIMA", "5440511", 60000);
+            a1.Deposit(5000);
+            a1.Withdraw(500);
+
+            Account a2 = new Account("ABIR", "64352340", 75000);
+            a2.Withdraw(2000);
+            a2.Deposit(12000);
+
+            Account a3 = new Account("SAWON", "67565240", 80000);
+            a3.Withdraw(2000);
+            a3.Deposit(1500);
+
+            Account a4 = new Account("TAIB", "6875240", 85000);
+            a4.Withdraw(2000);
+            a4.Deposit(10300);
+
+            Account a5 = new Account("OPEE", "6095240", 85000);
+            a4.Withdraw(2000);
+            a4.Deposit(10000);
+
+            a3.Transfer(1200, a);
+            a.Transfer(2000, a2);
+            a3.Transfer(5000, a4);
+            a5.Transfer(4000, a);
+            a5.Transfer(3000, a1);
+
+            Console.ReadKey();
+        }
+
+    }
+}
+
+
+*********************************BOOK************************
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Book
+{
+    public class BookCon
+    {
+
+        public int Empty;
+        public int valued;
+
+        BookCon()
+        {
+            Console.WriteLine("Con Called");
+        }
+    }
+
+    class book
+    {
+        private String bookName;
+        private String bookAutho;
+        private String bookId;
+        private String bookType;
+        private int bookCopy;
+
+
+        public string BOOKName
+        {
+            set
+            {
+                this.bookName = value;
+            }
+            get
+            {
+                return this.bookName;
+            }
+        }
+
+        public string BOOKAuthor
+        {
+            set
+            {
+                this.bookAutho = value;
+            }
+            get
+            {
+                return this.bookAutho;
+            }
+        }
+
+        public string BOOKId
+        {
+            set
+            {
+                this.bookId = value;
+            }
+            get
+            {
+                return this.bookId;
+            }
+        }
+
+        public string BOOKType
+        {
+            set
+            {
+                this.bookType = value;
+            }
+            get
+            {
+                return this.bookType;
+            }
+        }
+
+        public int BOOKCopy
+        {
+            set
+            {
+                this.bookCopy = value;
+            }
+            get
+            {
+                return this.bookCopy;
+            }
+        }
+    }
+    class Program
+    {
+
+        static void AddBookCopy(int x)
+        {
+            Console.WriteLine(" ");
+        }
+
+        static void Main(string[] args)
+        {
+
+            AddBookCopy(5);
+            book b1 = new book();
+            book b2 = new book();
+            book b3 = new book();
+            book b4 = new book();
+            book b5 = new book();
+            b1.BOOKName = "PSYCHOLOGY";
+            b2.BOOKAuthor = "KOPEE MOLLAH";
+            b3.BOOKId = "101";
+            b4.BOOKType = "MIND GAME";
+            b5.BOOKCopy = 5;
+
+            // BookCon g1 = new BookCon();
+            
+
+            Console.WriteLine("BOOK Name  :" + b1.BOOKName);
+            Console.WriteLine("BOOK Author:" + b2.BOOKAuthor);
+            Console.WriteLine("BOOK ID    :" + b3.BOOKId);
+            Console.WriteLine("BOOK Type  :" + b4.BOOKType);
+            Console.WriteLine("BOOK Copy  :" + b5.BOOKCopy);
+
+
+            Console.ReadKey();
+        }
+    }
+}
+
+
+***************************CONTACT*****************************
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace Contact
+{
+    class Program
+    {
+        public void DetectMobileOperator()
+        {
+            string[] mobilenum = { "0", "1", "8" };
+            //int age = Convert.ToInt32(Console.ReadLine());
+            for (int i = 0; i < 2; i++)
+            {
+                if (mobilenum[2] == "7")
+                {
+                    Console.WriteLine("GP User");
+                }
+                else if (mobilenum[2] == "6")
+                {
+                    Console.WriteLine("AIRTEL User");
+                }
+                else if (mobilenum[2] == "8")
+                {
+                    Console.WriteLine("ROBI User");
+                }
+                else
+                {
+                    Console.WriteLine("Invalid");
+                }
+            }
+        }
+        class CONTACT
+        {
+            private String personName;
+            private String personId;
+            private int age;
+            private String mobileNumber;
+
+            private char gender;
+
+            public CONTACT()
+            {
+                Console.WriteLine("Called From empty Const.");
+            }
+            public CONTACT(string pName, string pId, int age, string mNumber, char gend)
+            {
+                this.personName = pName;
+                this.personId = pId;
+                this.age = age;
+                this.mobileNumber = mNumber;
+                this.gender = gend;
+            }
+            public string PersonNAME
+            {
+                set
+                {
+                    this.personName = value;
+                }
+                get
+                {
+                    return this.personName;
+                }
+            }
+            public string PersonID
+            {
+                set
+                {
+                    this.personId = value;
+                }
+                get
+                {
+                    return this.personId;
+                }
+            }
+            public string MobileNUMBER
+            {
+                set
+                {
+                    this.mobileNumber = value;
+                }
+                get
+                {
+                    return this.mobileNumber;
+                }
+            }
+            public int AGE
+            {
+                set
+                {
+                    this.age = value;
+                }
+                get
+                {
+                    return this.age;
+
+                }
+            }
+            public char GEN
+            {
+                set
+                {
+                    this.gender = value;
+                }
+                get
+                {
+                    return this.gender;
+                }
+            }
+            public void showPersonInfo()
+            {
+                Console.WriteLine(" Person Name : " + personName);
+                Console.WriteLine(" Person ID : " + personId);
+                Console.WriteLine(" Person Age : " + age);
+                Console.WriteLine(" Person Mobile Number : " + mobileNumber);
+                Console.WriteLine(" Person Gender : " + gender);
+            }
+            static void Main(string[] args)
+            {
+                Program p1 = new Program();
+                p1.DetectMobileOperator();
+
+                CONTACT c1 = new CONTACT();
+                c1.PersonNAME = "MUNMUN";
+                c1.PersonID = "42710";
+                c1.age = 21;
+                c1.mobileNumber = "01735348889";
+                c1.gender = 'F';
+                c1.showPersonInfo();
+
+                Console.ReadKey();
+            }
+        }
+    }
+}
+
+*********************MOBILE***************************
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Mobile
+{
+    class Sim
+    {
+        private string mobileOwnerName;
+        private string mobileNumber;
+        private string mobileBalance;
+        private string mobileOSName;
+        private bool locknum = true;
+        private int amount = 0;
+        private int balance = 0;
+        private int timeduration = 0;
+
+        Sim() { }
+        public Sim(string mobileOwnerName, string mobileNumber, string mobileBalance, string mobileOSName)
+        {
+            this.mobileOwnerName = mobileOwnerName;
+            this.mobileNumber = mobileNumber;
+            this.mobileBalance = mobileBalance;
+            this.mobileOSName = mobileOSName;
+
+
+        }
+        public string Mon
+        {
+            set
+            {
+                this.mobileOwnerName = value;
+            }
+            get
+            {
+                return this.mobileOwnerName;
+            }
+        }
+        public string MN
+        {
+            set
+            {
+
+                this.mobileNumber = value;
+            }
+
+            get
+            {
+                return this.mobileNumber;
+            }
+        }
+        public string MB
+        {
+            set
+            {
+
+                this.mobileBalance = value;
+            }
+
+            get
+            {
+                return this.mobileBalance;
+            }
+        }
+        public string MOS
+        {
+            set
+            {
+
+                this.mobileOSName = value;
+            }
+
+            get
+            {
+                return this.mobileOSName;
+            }
+        }
+
+
+        public void showinfo()
+        {
+            Console.WriteLine("Owner Name = " + mobileOwnerName);
+            Console.WriteLine("Mobile Number = " + mobileNumber);
+            Console.WriteLine("Mobile Balance = " + mobileBalance);
+            Console.WriteLine("Mobile OS name = " + mobileOSName);
+
+        }
+        public void Recharge(int amount)
+        {
+            amount = amount + balance;
+            Console.WriteLine("Recharged balance = " + amount);
+
+        }
+        public void CallSomeone(int timeduration, bool locknum)
+        {
+            if (locknum == true)
+            {
+                Console.WriteLine("Unreachable");
+            }
+            else
+            {
+                int cost = timeduration * 1;
+                Console.WriteLine("Call Duration = " + timeduration);
+                Console.WriteLine("Call Cost = " + cost + "Taka");
+
+            }
+
+        }
+
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Sim s1 = new Sim("Shafiul Opee", "01735348889", "50", "APPLE");
+            s1.showinfo();
+            s1.Recharge(100);
+            s1.CallSomeone(3, true);
+
+            Console.WriteLine("  ");
+
+            Sim s2 = new Sim("YEASMIN MUNMUN", "01608103203", "70", "ANDROID");
+            s2.showinfo();
+            s2.Recharge(100);
+            s2.CallSomeone(5, false);
+
+            Console.ReadKey();
+        }
+    }
+}
+
+
+**************************LIBRARY********************
+
+Library Reuse Book Class:
+using System;
+using System.Collections.Generic;
+using System.Text;
+namespace Opee
+{
+ class Library
+ {
+          private string libName;
+           private string libAddress; 
+           Book[] listofBook;
+           public Library()
+ {
+ }
+            public Library(string libName, string libAddress)
+            { 
+        this.libName = libName;
+         this.libAddress = libAddress;
+          }
+         public string LibName 
+          {
+            set { libName = value; }
+             get { return libName; }
+          }
+          
+
+          public string LibAddress
+       {
+       set { libAddress = value; }
+        get { return libAddress; }
+           }
+ 
+         public void ShowLibInfo()
+        {
+          Console.WriteLine("Library Name: " + LibName);
+          Console.WriteLine("Library Address: " + LibAddress);
+          }
+       
+          public void AddNewBook(Book book)
+          {
+  
+          }
+      
+
+           public void DeleteBook(Book book)
+           {
+           } 
+                public void AddNewBookCopy(Book book, int copy)
+            {
+           }
+       }
+   } 
+
+
+*******************ADDRESSBOOK*******************
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+namespace Opee
+{
+         class AddressBook
+            {
+              private string ownerName;
+              private string ownerInfo;
+              Contact []listofContact;
+              public AddressBook()
+                    { 
+                        }
+ 
+                        public AddressBook(string o_name, string o_info)
+                     { 
+                      this.ownerName = o_name;
+                       this.ownerInfo = o_info;
+                         }
+                           public string OwnerName
+                          {
+                            set { ownerName = value; }
+                            get { return ownerName; }
+                            }
+                     public string OwnerInfo
+                     
+                 {
+                    set { ownerInfo = value; }
+                    get { return ownerInfo; }
+                   }
+             
+             public void ShowAllContactInfo()
+                   {
+               Console.WriteLine("Owner Name: " + OwnerName);
+               Console.WriteLine("Owner Info: " + OwnerInfo);
+                  }  
+              
+                 public void AddContact(Book book)
+               {
+                     }
+                   public void DeleteContact(Book book)
+               {
+              }
+          }
+      
+     }
+
+
+**********************************PROGRAM FILE FOR ADDRESS BOOK**************************
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+namespace Opee
+{
+       class Program 
+              {
+           static void Main(string[] args)
+      {
+           
+        Book b1 = new Book();
+        b1.BookName = "The Little Prince";
+        b1.BookAuthor = "Antoine de";
+        b1.BookID = "20-1";
+        b1.BookType = "Novel";
+        b1.BookCopy = 5;
+        b1.addBookCopy(2);
+        b1.ShowInfo();
+        Console.WriteLine(" ");
+        Book b2 = new Book("The cat in the hat","Dr. Seuss","20-
+        2","Story",3);
+
+  
+        b2.ShowInfo();   
+            Console.WriteLine(" ");
+            Contact c1 = new Contact();   
+            c1.PersonName = "MUNMUN";
+            c1.Age = 21;
+           c1.PersonID = "20-42710-1";   
+           c1.MobileNumber = "0160813203";
+           c1.Gender = 'F';
+           c1.ShowPersonInfo();
+           c1.DetectMobileOperator();
+           Console.WriteLine(" ");
+          Contact c2 = new Contact("YEASMIN", 20, "20-2",  "01735348889", 'F'); 
+          c2.ShowPersonInfo(); 
+          c2.DetectMobileOperator();
+          Console.WriteLine(" ");
+            Library l1 = new Library(); 
+          l1.LibName = "Bangla"; 
+           l1.LibAddress ="Dhanmondi";
+          
+
+        l1.ShowLibInfo();
+        Library l2 = new Library("Tamro","Nilkhet");
+        l2.ShowLibInfo();
+         Console.WriteLine(" ");
+        AddressBook a1 = new AddressBook();
+        a1.OwnerName = "FARHANA";
+         a1.OwnerInfo = "Student";
+         a1.ShowAllContactInfo();
+         AddressBook a2 = new AddressBook("Tom", "Doctor");
+          a2.ShowAllContactInfo();
+          Console.ReadKey();
+         }
+       }
+   } 
+*******************************LAB TEST****************************
+
+
+
+
+
+************TASK 1*****************
+*************program**************
+
+
+using System;
+
+
+namespace lab_test
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] arr;
+
+            Console.Write("How many numbers to store? ");
+
+            string val;
+            val = Console.ReadLine();
+            int n = Convert.ToInt32(val);
+            int i = 0;
+            arr = new int[n];
+
+            Console.WriteLine("Enter the numbers: ");
+
+            for (; i < n; ++i)
+            {
+                string s;
+                s = Console.ReadLine();
+                arr[i] = Convert.ToInt32(s);
+            }
+
+            ArraySample obj = new ArraySample();
+            Console.WriteLine("\nMax Element: " + obj.Max(arr));
+            Console.WriteLine("Min Element: " + obj.Min(arr));
+            obj.printPrimes(arr);
+
+        }
+    }
+}
+
+
+****************arraysample*******************
+using System;
+
+
+class ArraySample
+{
+    public int Max(int[] arr)
+    {
+
+        int n = arr.Length;
+        int mx = arr[0];
+
+        for (int i = 1; i < n; ++i)
+        {
+            if (arr[i] > mx)
+            {
+                mx = arr[i];
+            }
+        }
+
+        return mx;
+    }
+
+    public int Min(int[] arr)
+    {
+
+        int n = arr.Length;
+
+        int mn = arr[0];
+
+        for (int i = 1; i < n; ++i)
+        {
+            if (arr[i] < mn)
+                mn = arr[i];
+        }
+
+        return mn;
+    }
+
+    public void printPrimes(int[] arr)
+    {
+
+        int n = arr.Length;
+
+        Console.Write("Prime Numbers: ");
+
+        for (int i = 0; i < n; ++i)
+        {
+
+            bool flag = true;
+            if (arr[i] > 1)
+                for (int j = 2; j <= (int)Math.Sqrt(arr[i]); ++j)
+                {
+                    if (arr[i] % j == 0)
+                    {
+                        flag = false;
+                        break;
+                    }
+                }
+            if (flag && arr[i] > 1)
+            {
+                Console.Write(arr[i] + " ");
+            }
+        }
+        Console.WriteLine();
+    }
+}
+
+
+
+********************************************************************************************
+********************************************************************************************
+using System;
+
+namespace Task2
+{
+    class Vehicle
+    {
+        private String type;
+        private String speed;
+
+        private int numberOfWheels;
+
+        private int numberOfSeats;
+
+        protected static int count = 0;
+
+        private String Type { get { return type; } set { type = value; } }
+        private String Speed { get { return speed; } set { speed = value; } }
+
+        private int NumberOfWheels { get { return numberOfWheels; } set { numberOfWheels = value; } }
+
+        private int NumberOfSeats { get { return numberOfSeats; } set { numberOfSeats = value; } }
+
+
+        public Vehicle() { }
+
+        public Vehicle(String type, String speed, int numberOfWheels, int numberOfSeats)
+        {
+            this.type = type;
+            this.speed = speed;
+            this.numberOfWheels = numberOfWheels;
+            this.numberOfSeats = numberOfSeats;
+        }
+
+        virtual public void ShowInfo()
+        {
+            Console.WriteLine("Vehicle type: {0} Speed: {1} Wheel: {2} Seats: {3}", type, speed, numberOfWheels, numberOfSeats);
+        }
+
+    }
+
+    class Car : Vehicle
+    {
+        private string modelName;
+        private string regNo;
+        private string company;
+
+        protected int vehicleCount;
+
+        public Car() : base() { }
+
+        public Car(String type, String speed, int numberOfWheels, int numberOfSeats, string modelName, string regNo, string company, int count) : base(type, speed, numberOfWheels, numberOfSeats)
+        {
+            this.modelName = modelName;
+            this.regNo = regNo;
+            this.company = company;
+            this.vehicleCount = count;
+            Vehicle.count += count;
+        }
+
+
+
+        override public void ShowInfo()
+        {
+            base.ShowInfo();
+            Console.WriteLine("Model: {0} Registration: {1} Company: {2} Availble: {3}", modelName, regNo, company, count);
+        }
+    }
+}
+
+
+*************program****************
+
+
+
+using System;
+
+namespace task2
+    class Program
+    {
+
+        static void Main(string[] args)
+        {
+            bool isRunning = true;
+            while (isRunning)
+            {
+                int choice;
+                Console.WriteLine("1.Add car");
+                Console.WriteLine("2. Add vehicle");
+                Console.WriteLine("3. Exit");
+                Console.WriteLine("Enter Choice: ");
+                choice = Convert.ToInt32(Console.ReadLine());
+                switch (choice)
+                {
+                    case 1:
+                        Console.WriteLine("Enter Vehicle Type: ");
+                        String type = Console.ReadLine();
+                        Console.WriteLine("Enter Vehicle Speed: ");
+
+                        String speed = Console.ReadLine();
+                        Console.WriteLine("Enter Vehicle Wheels: ");
+
+                        int numberOfWheels = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Enter Vehicle Seats: ");
+
+                        int numberOfSeats = Convert.ToInt32(Console.ReadLine());
+
+                        Console.WriteLine("Enter Model Name: ");
+
+                        string modelName = Console.ReadLine();
+                        Console.WriteLine("Enter Reg No: ");
+                        string regNo = Console.ReadLine();
+
+                        Console.WriteLine("Enter Company: ");
+                        string company = Console.ReadLine();
+
+                        Console.WriteLine("Number of cars:");
+                        int numbn = Convert.ToInt32(Console.ReadLine());
+
+
+                        Car car = new Car(type, speed, numberOfWheels, numberOfSeats, modelName, regNo, company, numbn);
+                        car.ShowInfo();
+                        isRunning = false;
+                        break;
+
+                    case 2:
+
+                        Console.WriteLine("Enter Vehicle Type: ");
+                        type = Console.ReadLine();
+                        Console.WriteLine("Enter Vehicle Speed: ");
+
+                        speed = Console.ReadLine();
+                        Console.WriteLine("Enter Vehicle Wheels: ");
+
+                        numberOfWheels = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Enter Vehicle Seats: ");
+
+                        numberOfSeats = Convert.ToInt32(Console.ReadLine());
+
+                        Vehicle vehicle = new Vehicle(type, speed, numberOfWheels, numberOfSeats);
+
+                        vehicle.ShowInfo();
+                        isRunning = false;
+                        break;
+                    case 3:
+                        isRunning = false;
+                        break;
+                    default:
+                        Console.WriteLine("Choice must be: 1-3");
+                        break;
+
+                }
+            }
+
+        }
+    }
+}
+
+
+***********************************************THANK YOU *************************************************
